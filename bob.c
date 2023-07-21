@@ -74,6 +74,9 @@ int main() {
     RSA *rsaPublicKeyAlice = PEM_read_RSAPublicKey(pubKeyFile2, NULL, NULL, NULL);
     fclose(pubKeyFile2);
 
+    printf("Chave pública RSA de Alice:\n");
+    RSA_print_fp(stdout, rsaPublicKeyAlice, 0);
+    printf("\n");
     // Criptografar chave simétrica usando a chave pública RSA de Alice
     encryptRSAKey(symmetricKey, rsaPublicKeyAlice, (unsigned char *)message, (int *)&addr_size);
 

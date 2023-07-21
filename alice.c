@@ -63,6 +63,13 @@ int main() {
     char decryptedKey[AES_KEY_LENGTH + 1];
     decryptRSAKey((unsigned char *)message, encryptedKeyLength, rsaPrivateKey, decryptedKey);
 
+      // Exibir a chave simétrica criptografada recebida de Bob
+    printf("Chave simétrica criptografada recebida de Bob: ");
+    for (int i = 0; i < encryptedKeyLength; i++) {
+        printf("%02x", (unsigned char)message[i]);
+    }
+    printf("\n");
+
     // Loop para enviar várias mensagens para Bob
     while (1) {
         // Carregar a mensagem a ser enviada para Bob
