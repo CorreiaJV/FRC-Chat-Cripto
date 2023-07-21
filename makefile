@@ -1,8 +1,8 @@
 client: 
-	clear && gcc alice.c -o alice -lm -lcrypto
+	clear && gcc alice.c -o alice -lm -lcrypto && ./alice
 
 server:
-	clear && gcc bob.c -o bob -lm -lcrypto
+	clear && gcc bob.c -o bob -lm -lcrypto && ./bob
 
 
 client2: 
